@@ -18,6 +18,7 @@ export const AppDataSource = new DataSource({
   password: BD_PASSWORD,
   database: BD_BASEDATOS,
   // dropSchema: true,
+  ssl: true,
   synchronize: true,
   logging: false,
 

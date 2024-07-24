@@ -1,6 +1,11 @@
+import { Console } from "console";
+import path from "path";
+
 const dotenv = require("dotenv");
 
-dotenv.config();
+console.log("hola" + __dirname);
+dotenv.config({ path: path.resolve(__dirname, "../../.env") });
+console.log(`BD_HOST ${process.env.BD_HOST}`);
 
 export const PORT = process.env.PORT;
 export const BD_HOST = process.env.BD_HOST;
