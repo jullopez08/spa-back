@@ -15,33 +15,7 @@ export const createCredentials = async (username: string, password: string) => {
   const rsulCrt = await crtialRepository.save(cretialData);
   return rsulCrt.id;
 };
-// Función para validar las credenciales
-// export const validarCredentials = async (
-//   username: string,
-//   password: string
-// ): Promise<number | undefined> => {
-//   try {
-//     // Buscar las credenciales en la base de datos
-//     const foundCredential = await AppDataSource.getRepository(
-//       Credential
-//     ).findOne({
-//       where: {
-//         username,
-//       },
-//     });
 
-//     // Verificar si se encontraron las credenciales y si la contraseña es correcta
-//     if (foundCredential && foundCredential.password === password) {
-//       return foundCredential.id; // Retorna el ID del par de credenciales si las credenciales son válidas
-//     } else {
-//       return undefined; // Retorna 'undefined' si las credenciales no son válidas
-//     }
-//   } catch (error) {
-//     console.error("Error al validar las credenciales y obtener el ID:", error);
-//     throw error;
-//   }
-// };
-//
 export async function validateCredentialsAndGetId(
   username: string,
   password: string
