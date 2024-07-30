@@ -3,11 +3,11 @@ import { User } from "../entities/User";
 import { Credential } from "../entities/credential";
 import { Appointment } from "../entities/appointment";
 import {
-  BD_BASEDATOS,
   BD_HOST,
-  BD_PASSWORD,
   BD_PORT,
   BD_USERNAME,
+  BD_PASSWORD,
+  BD_BASEDATOS,
 } from "./envs";
 
 export const AppDataSource = new DataSource({

@@ -30,7 +30,9 @@ export const getAllUserById = async (id: number): Promise<User | null> => {
 
 export async function createUser(user: Omit<IUser, "id" | "credentialsId">) {
   try {
-    const userRepository = AppDataSource.getRepository(User);
+    const userRepository = await AppDataSource.getRepository(User);
+    console.log(userRepository);
+
     const usersData = await userRepository.create(user);
 
     // Crea las credenciales para el nuevo usuario

@@ -38,7 +38,8 @@ exports.getAllUserById = getAllUserById;
 function createUser(user) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const userRepository = data_source_1.AppDataSource.getRepository(User_1.User);
+            const userRepository = yield data_source_1.AppDataSource.getRepository(User_1.User);
+            console.log(userRepository);
             const usersData = yield userRepository.create(user);
             // Crea las credenciales para el nuevo usuario
             const newCredentialId = yield (0, credentialService_1.createCredentials)(user.username, user.password);
